@@ -11,8 +11,8 @@ export default class App extends React.Component {
     return (
       <div className="App">
       <button onClick={()=> this.setState({n:100})}>I am an app button</button>
-        <CompUpdateLifeCycleHook test={this.state.n}/>
-      </div>
+        <CompUpdateLifeCycleHook test={this.state.n}/> 
+     </div>
     );
   }
 }

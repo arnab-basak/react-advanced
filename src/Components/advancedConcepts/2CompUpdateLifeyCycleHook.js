@@ -15,20 +15,21 @@ export default class CompUpdateLifeyCycleHook extends Component {
 
   shouldComponentUpdate(newProps, newState) {
     //new prop and new state: must return boolean
-    console.log("shouldComponentUpdate", newProps, newState); 
+    console.log("shouldComponentUpdate", newProps, newState);
     return true;
   }
   getSnapshotBeforeUpdate(prevProps, prevState) {
     // old prop or old state whichever is getting updated
     console.log("getSnapshotBeforeUpdate", prevProps, prevState);
-    // must returnsnapshot or null
+    // must return something or null: returned value will
+    // be 3rd param in componentDidU[date]
     return -1;
   }
   componentDidMount() {
     console.log("componentDidMount", this.props, this.state);
   }
-  componentDidUpdate(p, s,snapshot) {
-    console.log('snapshot',p, s, snapshot)
+  componentDidUpdate(oldprops, oldstate, snapshot) {
+    console.log("snapshot", oldprops, oldstate, snapshot);
     //old values for state and props received as param
     //however accessing via this.props/state gives latest values
     console.log("componentDidUpdate", this.props, this.state);
