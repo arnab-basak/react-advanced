@@ -28,3 +28,20 @@ shouldComponentUpdate(nextProps, nextState) {
 // check for all those n variables by chaningin ||...its better to use PureComponent
 // rather that extends Componets because PureComponent does that same thing under the 
 // hood
+
+// the above concept is just for CBC
+// ---------------------------------------------------
+// ---------------------------------------------------
+// ---------------------------------------------------
+
+// coming to FBC, we need to use React.memo to achieve the same
+// basically react memoises/stores a snapshot of all prop dependencies
+// and updates the child component only if one or more prop changes
+
+
+const fbc = () => {
+  return (
+      <p>sample</p>
+    );
+}
+export default React.memo(fbc);
