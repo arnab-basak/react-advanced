@@ -34,7 +34,9 @@ export default class CompUpdateLifeyCycleHook extends Component {
     //however accessing via this.props/state gives latest values
     console.log("componentDidUpdate", this.props, this.state);
   }
-
+  componentWillUnmount(props, state) {
+    console.log('component will unmount', props, state)
+  }
   render() {
     console.log("render");
     return (
